@@ -9,6 +9,9 @@ import {
 console.log("Task routes loaded");
 
 const router = express.Router();
+router.get("/hello", (req, res) => {
+  res.json({ message: "Hello from router" });
+});
 router.post("/task", newTask);
 router.get("/tasks", getTasks);
 router.put("/task/:id", updateTask);

@@ -14,6 +14,12 @@ app.use(express.urlencoded({ extended: true }));
 db();
 
 app.use("/api/v1", router);
+app.get("/test", (req, res) => {
+  res.json({
+    success: true,
+    message: "Backend is working",
+  });
+});
 
 app.listen(port, () => {
   console.log(`Serve running on port ${port}...`);

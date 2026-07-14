@@ -92,11 +92,33 @@ const newTask = async (req, res) => {
 //   }
 // };
 
+// const getTasks = async (req, res) => {
+//   return res.json({
+//     success: true,
+//     message: "getTasks route reached",
+//   });
+// };
 const getTasks = async (req, res) => {
-  return res.json({
-    success: true,
-    message: "getTasks route reached",
-  });
+  try {
+    console.log("GET /tasks called");
+
+    const tasks = await Task.find();
+
+    console.log(tasks);
+
+    return res.status(200).json({
+      success: true,
+      tasks,
+      message: "Fetched all tasks successfully",
+    });
+  } catch (error) {
+    console.error("Error fetching tasks:", error);
+
+    return res.status(500).json({
+      success: false,
+      error: error.message,
+    });
+  }
 };
 
 const updateTask = async (req, res) => {

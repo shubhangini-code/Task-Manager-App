@@ -5,7 +5,7 @@ async function updateTaskAPI(
   handleError,
   setLoading,
 ) {
-  setLoading(false);
+  setLoading(true);
   try {
     const baseUrl = import.meta.env.VITE_APP_API_BASE_URL;
     const endpoint = `/task/${taskId}`;

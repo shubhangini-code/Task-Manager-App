@@ -66,7 +66,10 @@ const TaskMain = () => {
   return (
     <>
       {/* {currentComponent === "loading" && <Loading />} */}
-      {currentComponent === "loading" && <p>Loading...</p>}
+      {currentComponent === "loading" && (
+        //  <p>Loading...</p>
+        <div className="loader"></div>
+      )}
       <div id="container-div">
         {currentComponent === "noTask" && (
           <NoTask showCreateTaskScreen={showCreateTaskScreen} />

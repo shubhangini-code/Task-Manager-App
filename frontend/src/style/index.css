@@ -197,6 +197,28 @@ h2 {
   font-size: 1.875rem;
 }
 
+.loader {
+  position: fixed;
+  top: 47%;
+  left: 47%;
+  /* transform: translate(-50%, -50%); */
+
+  width: 60px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(farthest-side, #560098 94%, #0000) top/10px 10px no-repeat,
+    conic-gradient(#0000 30%, #560098);
+  -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 8px), #000 0);
+  animation: l13 1s infinite linear;
+}
+
+@keyframes l13 {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
 .task-heading {
   font-size: 1.875rem;
   font-weight: 500;

@@ -15,10 +15,16 @@ db();
 console.log("Router mounted at /api/v1");
 
 app.use("/api/v1", router);
-app.get("/test", (req, res) => {
+// app.get("/test", (req, res) => {
+//   res.json({
+//     success: true,
+//     message: "Backend is working",
+//   });
+// });
+app.get("/", (req, res) => {
   res.json({
     success: true,
-    message: "Backend is working",
+    message: "Task Manager Backend is Running 🚀",
   });
 });
 

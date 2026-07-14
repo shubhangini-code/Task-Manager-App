@@ -74,23 +74,23 @@ const newTask = async (req, res) => {
   }
 };
 
-// const getTasks = async (req, res) => {
-//   try {
-//     const tasks = await Task.find();
+const getTasks = async (req, res) => {
+  try {
+    const tasks = await Task.find();
 
-//     res.status(200).json({
-//       success: true,
-//       tasks,
-//       message: "fetched all task successfully",
-//     });
-//   } catch (error) {
-//     console.error("Failed to fetch error", error);
-//     res.status(400).json({
-//       success: false,
-//       message: "Failed to fetch tasks",
-//     });
-//   }
-// };
+    res.status(200).json({
+      success: true,
+      tasks,
+      message: "fetched all task successfully",
+    });
+  } catch (error) {
+    console.error("Failed to fetch error", error);
+    res.status(400).json({
+      success: false,
+      message: "Failed to fetch tasks",
+    });
+  }
+};
 
 // const getTasks = async (req, res) => {
 //   return res.json({
@@ -98,28 +98,28 @@ const newTask = async (req, res) => {
 //     message: "getTasks route reached",
 //   });
 // };
-const getTasks = async (req, res) => {
-  try {
-    console.log("GET /tasks called");
+// const getTasks = async (req, res) => {
+//   try {
+//     console.log("GET /tasks called");
 
-    const tasks = await Task.find();
+//     const tasks = await Task.find();
 
-    console.log(tasks);
+//     console.log(tasks);
 
-    return res.status(200).json({
-      success: true,
-      tasks,
-      message: "Fetched all tasks successfully",
-    });
-  } catch (error) {
-    console.error("Error fetching tasks:", error);
+//     return res.status(200).json({
+//       success: true,
+//       tasks,
+//       message: "Fetched all tasks successfully",
+//     });
+//   } catch (error) {
+//     console.error("Error fetching tasks:", error);
 
-    return res.status(500).json({
-      success: false,
-      error: error.message,
-    });
-  }
-};
+//     return res.status(500).json({
+//       success: false,
+//       error: error.message,
+//     });
+//   }
+// };
 
 const updateTask = async (req, res) => {
   try {

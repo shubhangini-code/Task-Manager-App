@@ -74,22 +74,29 @@ const newTask = async (req, res) => {
   }
 };
 
-const getTasks = async (req, res) => {
-  try {
-    const tasks = await Task.find();
+// const getTasks = async (req, res) => {
+//   try {
+//     const tasks = await Task.find();
 
-    res.status(200).json({
-      success: true,
-      tasks,
-      message: "fetched all task successfully",
-    });
-  } catch (error) {
-    console.error("Failed to fetch error", error);
-    res.status(400).json({
-      success: false,
-      message: "Failed to fetch tasks",
-    });
-  }
+//     res.status(200).json({
+//       success: true,
+//       tasks,
+//       message: "fetched all task successfully",
+//     });
+//   } catch (error) {
+//     console.error("Failed to fetch error", error);
+//     res.status(400).json({
+//       success: false,
+//       message: "Failed to fetch tasks",
+//     });
+//   }
+// };
+
+const getTasks = async (req, res) => {
+  return res.json({
+    success: true,
+    message: "getTasks route reached",
+  });
 };
 
 const updateTask = async (req, res) => {
